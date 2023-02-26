@@ -1,0 +1,30 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>file upload</title>
+    </head>
+    <body>
+        <form name="" method="" action="">
+            <input type="file"
+            </b>
+            <button>Download</button>
+            <br><br>
+            <input type="file"
+            </b>
+            <button>Download</button>
+            <br><br>
+            <input type="file"
+            </b>
+            <button>Download</button>
+            <br><br>
+            <input type="file"
+            </b>
+            <button>Download</button>
+            <br><br>
+            <input type="file"
+            </br>
+            <button>Download</button>
+        </form>
+        </form>
+    </body>
+</html>
