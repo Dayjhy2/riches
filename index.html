@@ -1,18 +1,80 @@
 <!Doctype html>
-<html>
-<head>
-<title>
-E-Mail Provider-Enjoy Freely.
-</title>
-</head>
-<body>
-<form action="send.php" method="POST">
-	To:<input type="text" name="to"></br>
-	From:<input type="text" name="from"></br>
-	Subject:<input type="text" name="subject"><p>
-	Message:<br><textarea name="message" cols="30" rows="10"></textarea><p>
-	<input type="submit" name="submit" value="Send E-Mail">
-</form>
+<html> 
+ <head> 
+  <title>Rock, Paper, Scissors</title> 
+  <style type="text/css">
+    /* Styles for Images and Buttons */
+    #rock-img, #paper-img, #scissors-img {
+      width: 150px;
+      height: 150px;
+      cursor: pointer;
+      margin: 10px;
+    }
+
+    #rock-button, #paper-button, #scissors-button {
+      display: block;
+      margin: 0 auto;
+      padding: 10px;
+      background-color: #4285F4;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style> 
+ </head> 
+ <body> 
+  <h1>Rock, Paper, Scissors</h1> 
+  <p>Choose your weapon:</p> 
+  <div id="game-container"> 
+   <img id="rock-img" src="https://img.icons8.com/ios-filled/150/000000/hand-rock.png"> 
+   <img id="paper-img" src="https://img.icons8.com/ios-filled/150/000000/hand.png"> 
+   <img id="scissors-img" src="https://img.icons8.com/ios-filled/150/000000/hand-scissors.png"> 
+  </div> <button id="rock-button" onclick="playGame('rock')">Rock</button> <button id="paper-button" onclick="playGame('paper')">Paper</button> <button id="scissors-button" onclick="playGame('scissors')">Scissors</button> 
+  <p id="output"></p> 
+  <script type="text/javascript">
+    // Function to determine the computer's choice
+    function computerPlay() {
+      let choices = ["rock", "paper", "scissors"];
+      let randomIndex = Math.floor(Math.random() * 3);
+      return choices[randomIndex];
+    }
+
+    // Function to play the game
+    function playGame(playerSelection) {
+      let computerSelection = computerPlay();
+      let output = document.getElementById("output");
+
+      if (playerSelection === computerSelection) {
+        output.innerHTML = "It's a tie!";
+      } else if (
+        (playerSelection === "rock" && computerSelection === "scissors") ||
+        (playerSelection === "paper" && computerSelection === "rock") ||
+        (playerSelection === "scissors" && computerSelection === "paper")
+      ) {
+        output.innerHTML = `You win! ${playerSelection} beats ${computerSelection}.`;
+      } else {
+        output.innerHTML = `You lose! ${computerSelection} beats ${playerSelection}.`;
+      }
+    }
+
+    // Add event listeners for the images
+    document.getElementById("rock-img").addEventListener("click", function() {
+      playGame("rock");
+    });
+    document.getElementById("paper-img").addEventListener("click", function() {
+      playGame("paper");
+    });
+    document.getElementById("scissors-img").addEventListener("click", function() {
+      playGame("scissors");
+    });
+  </script> 
+  <h1> Hello </h1> 
+  <div>
+    This is a html example from Riches, 
+   <br> have fun guys. :) 
+  </div> 
      <footer>
       <p>Riches Web Design, Copyright &copy; 2023</p>
     </footer>
